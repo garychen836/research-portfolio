@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gary Chen · Research + AI Systems Portfolio</title>
+<meta property="og:title" content="Gary Chen · Research + AI Systems Portfolio">
+<meta property="og:description" content="AI tools for research, qualitative and mixed-methods case studies, and peer-reviewed publications.">
+<meta property="og:type" content="website">
+<meta name="description" content="Research portfolio of Guanyu (Gary) Chen: AI tools for research, qualitative and quantitative research case studies, and peer-reviewed publications.">
+<style>
+  :root{
+    --ink:#172b4d; --ink-2:#44546f; --ink-3:#626f86; --line:#dcdfe4; --bg:#ffffff; --bg-2:#f7f8f9;
+    --accent:#0c66e4; --accent-soft:#e9f2ff; --green:#216e4e; --green-soft:#dcfff1; --amber:#7f5f01; --amber-soft:#fff7d6;
+    --purple:#5e4db2; --purple-soft:#f3f0ff; --radius:10px; --max:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  a{color:var(--accent)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;gap:20px;align-items:center;height:56px;overflow-x:auto;white-space:nowrap}
+  nav b{margin-right:auto}
+  nav a{color:var(--ink-2);text-decoration:none;font-size:14px}
+  nav a:hover{color:var(--accent)}
+  header{padding:72px 0 40px}
+  .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+  h1{font-size:44px;line-height:1.15;margin:10px 0 16px;letter-spacing:-.02em}
+  h1 span{color:var(--accent)}
+  .lede{font-size:19px;color:var(--ink-2);max-width:760px}
+  .meta{margin-top:20px;color:var(--ink-3);font-size:14px}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--ink-2);margin:0 0 28px;max-width:760px}
+  h3{font-size:20px;margin:0 0 4px}
+  /* fit table */
+  .fit{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .fit div{border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;background:var(--bg-2)}
+  .fit .q{font-size:13px;color:var(--ink-3);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+  .fit p{margin:6px 0 0}
+  /* process map */
+  .process{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .process button{font:inherit;font-size:14px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;cursor:pointer;color:var(--ink-2)}
+  .process button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .process-note{font-size:14px;color:var(--ink-3);margin:-6px 0 22px;min-height:22px}
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;display:flex;flex-direction:column;transition:opacity .2s, box-shadow .2s}
+  .card:hover{box-shadow:0 4px 18px rgba(9,30,66,.08)}
+  .card.dim{opacity:.28}
+  .also{border-top:1px dashed var(--line);padding-top:24px}
+  .also h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:0 0 6px}
+  .also li{margin:8px 0;color:var(--ink-2)}
+  .card.featured{grid-column:1/-1;border:2px solid var(--accent);background:linear-gradient(180deg,var(--accent-soft),#fff 70%)}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+  .stat{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--bg-2)}
+  .stat b{display:block;font-size:26px;line-height:1.2;color:var(--accent)}
+  .stat span{font-size:13px;color:var(--ink-3)}
+  @media (max-width:760px){.stat-row{grid-template-columns:1fr}}
+  .card .tag{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;align-self:flex-start;margin-bottom:12px}
+  .t-ai{background:var(--accent-soft);color:var(--accent)}
+  .t-qual{background:var(--green-soft);color:var(--green)}
+  .t-mixed{background:var(--amber-soft);color:var(--amber)}
+  .t-sci{background:var(--purple-soft);color:var(--purple)}
+  .card p{margin:8px 0;color:var(--ink-2)}
+  .card .stages{margin-top:auto;padding-top:12px;font-size:12px;color:var(--ink-3)}
+  .card a.more{font-weight:600;text-decoration:none;font-size:15px}
+  /* case studies */
+  .case{display:grid;grid-template-columns:240px 1fr;gap:32px;padding:36px 0;border-top:1px dashed var(--line)}
+  .case:first-of-type{border-top:0;padding-top:8px}
+  .case aside{font-size:14px;color:var(--ink-3)}
+  .case aside dl{margin:12px 0 0}
+  .case aside dt{font-weight:600;color:var(--ink-2);margin-top:10px}
+  .case aside dd{margin:0}
+  .case h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:22px 0 6px}
+  .case ul{margin:6px 0;padding-left:20px}
+  .case li{margin:4px 0}
+  .insight{border-left:4px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;color:var(--ink)}
+  .guard{border-left-color:var(--green);background:var(--green-soft)}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0}
+  th,td{border-bottom:1px solid var(--line);text-align:left;padding:8px 10px;vertical-align:top}
+  th{background:var(--bg-2);font-weight:600;color:var(--ink-2)}
+  .bar{height:8px;border-radius:4px;background:var(--accent)}
+  .bar.alt{background:#8f7ee7}
+  .pubs li{margin:10px 0}
+  .todo{background:#fff4e5;border:1px dashed #e2a03f;padding:1px 6px;border-radius:4px;font-size:14px}
+  footer{padding:48px 0 72px;border-top:1px solid var(--line);color:var(--ink-3);font-size:14px}
+  @media (max-width:760px){
+    h1{font-size:32px}
+    .fit{grid-template-columns:1fr}
+    .case{grid-template-columns:1fr;gap:8px}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <b>Gary Chen</b>
+  <a href="#fit">Fit</a>
+  <a href="#work">All work</a>
+  <a href="#ai">AI tools</a>
+  <a href="#research">Research</a>
+  <a href="#science">Publications</a>
+  <a href="#contact">Contact</a>
+</div></nav>
+
+<header class="wrap">
+  <div class="eyebrow">Research Intern, AI Research Systems (AIRS) · Summer 2027</div>
+  <h1>I do research, and I build <span>AI tools that make research faster</span>.</h1>
+  <p class="lede">I'm Guanyu (Gary) Chen, an MBA student at Yale SOM (2028). I trained as a materials scientist, with papers in <em>PNAS</em> and <em>JACS</em>, and spent five years as a process engineer at Applied Materials and Micron. Now I run customer research and build AI agents with Claude Code. My favorite is <a href="#deptwin">Dep Twin</a>, an AI agent that plans experiments on a digital twin of a semiconductor tool, with a human approving every real run. This portfolio shows the full research process, from planning and recruiting to reporting and archiving, alongside the AI systems I've shipped.</p>
+  <p class="meta">Yale SOM MBA '28 · M.S. Materials Science, Cornell · B.S. Materials Science &amp; Philosophy, RPI</p>
+</header>
+
+<section id="fit"><div class="wrap">
+  <h2>How this maps to the role</h2>
+  <p class="sub">The four preferred qualifications in the posting, and where to find the evidence for each below.</p>
+  <div class="fit">
+    <div><span class="q">Building tools with AI (Claude Code)</span>
+      <p>Five AI products built with Claude Code, four of them live. Three are featured: <a href="#deptwin">Dep Twin</a>, an experiment-planning agent with a public demo; <a href="#compass">Yale Career Compass</a>, which lists 2,700+ jobs; and <a href="#salesdesk">Sales Desk</a>, which my company's sales team uses. Two more are <a href="#also-built">summarized below them</a>.</p></div>
+    <div><span class="q">The end-to-end research process</span>
+      <p>Click the stages in <a href="#work">All work</a> to see which project covers each one. <a href="#voltcart">VoltCart</a> walks through every stage: hypotheses, recruiting screener, guide, pass/fail thresholds, synthesis.</p></div>
+    <div><span class="q">Qualitative (and some quantitative) methods</span>
+      <p>Interviews, field observation, retail audits and survey design (<a href="#painpoints">pain-point synthesis</a>, <a href="#market">market assessment</a>, <a href="#instrument">questionnaire</a>), plus DOE, SPC and price benchmarking from engineering.</p></div>
+    <div><span class="q">Data management, analysis &amp; sharing insights</span>
+      <p>Pipelines that merge 15+ sources into one schema, data-driven to-do cards and dashboards, and plain-language reports that say what was and wasn't verified.</p></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2>All work, by research stage</h2>
+  <p class="sub">Choose a stage of the research process to highlight the projects that cover it.</p>
+  <div class="process" role="group" aria-label="Filter by research stage">
+    <button data-stage="all" aria-pressed="true">All</button>
+    <button data-stage="plan">Plan</button>
+    <button data-stage="recruit">Recruit</button>
+    <button data-stage="collect">Collect</button>
+    <button data-stage="analyze">Analyze</button>
+    <button data-stage="report">Report &amp; share</button>
+    <button data-stage="archive">Archive &amp; reuse</button>
+  </div>
+  <p class="process-note" id="stage-note"></p>
+  <div class="grid">
+    <article class="card featured" data-stages="plan collect analyze report archive">
+      <span class="tag t-ai">Featured · AI tool · live demo</span>
+      <h3>Dep Twin: an AI agent that plans experiments</h3>
+      <p>A digital twin of an ALD deposition tool. A Bayesian-optimization agent proposes recipes and a human approves every real run. It matched the best result of an 81-run standard experiment design in a median of 18 runs.</p>
+      <a class="more" href="#deptwin">Read the case →</a>
+      <div class="stages">Plan · Collect · Analyze · Report · Archive</div>
+    </article>
+    <article class="card" data-stages="collect analyze report archive">
+      <span class="tag t-ai">AI tool · live</span>
+      <h3>Yale Career Compass</h3>
+      <p>2,700+ entry-level roles read daily from employers' own career pages, joined with public H-1B filing data, with a chat that can only answer from data the site has verified.</p>
+      <a class="more" href="#compass">Read the case →</a>
+      <div class="stages">Collect · Analyze · Report · Archive</div>
+    </article>
+    <article class="card" data-stages="recruit collect analyze report archive">
+      <span class="tag t-ai">AI tool · in use</span>
+      <h3>Sales Desk: AI prospect research and quoting</h3>
+      <p>A research agent that profiles companies with cited sources, drafts outreach and turns inquiries into quotes. Any number comes from code, never from the model.</p>
+      <a class="more" href="#salesdesk">Read the case →</a>
+      <div class="stages">Recruit · Collect · Analyze · Report · Archive</div>
+    </article>
+    <article class="card" data-stages="plan recruit collect analyze">
+      <span class="tag t-qual">Qualitative</span>
+      <h3>VoltCart customer discovery</h3>
+      <p>An interview study of 27 people across five stakeholder groups, with hypotheses and pass/fail thresholds set before any interviews.</p>
+      <a class="more" href="#voltcart">Read the case →</a>
+      <div class="stages">Plan · Recruit · Collect · Analyze</div>
+    </article>
+    <article class="card" data-stages="collect analyze report">
+      <span class="tag t-qual">Qualitative synthesis</span>
+      <h3>Energy-storage pain points</h3>
+      <p>Field feedback from a North American industry forum, synthesized into a segment × pain-point matrix with a "minimum bar" for each segment.</p>
+      <a class="more" href="#painpoints">Read the case →</a>
+      <div class="stages">Collect · Analyze · Report</div>
+    </article>
+    <article class="card" data-stages="plan collect analyze report">
+      <span class="tag t-mixed">Mixed methods</span>
+      <h3>Battery-pack market assessment</h3>
+      <p>Retail audits, site visits, trade-show conversations and $/kWh benchmarking. The result was a recommendation not to enter one market, and a new direction.</p>
+      <a class="more" href="#market">Read the case →</a>
+      <div class="stages">Plan · Collect · Analyze · Report</div>
+    </article>
+    <article class="card" data-stages="plan collect">
+      <span class="tag t-qual">Instrument design</span>
+      <h3>Requirements questionnaire</h3>
+      <p>A two-tier survey (20 core items, 36 optional technical items) that takes a customer 10–15 minutes and makes them rank conflicting targets.</p>
+      <a class="more" href="#instrument">Read the case →</a>
+      <div class="stages">Plan · Collect</div>
+    </article>
+    <article class="card" data-stages="plan collect analyze report">
+      <span class="tag t-sci">Peer-reviewed</span>
+      <h3>PNAS (2019) · JACS (2020)</h3>
+      <p>Fuel-cell catalyst research, including a combinatorial screening study, plus five patent applications and DOE/SPC work in semiconductor manufacturing.</p>
+      <a class="more" href="#science">See publications →</a>
+      <div class="stages">Plan · Collect · Analyze · Report</div>
+    </article>
+  </div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+  <h2>AI tools I've built</h2>
+  <p class="sub">I built all of these with Claude Code. For each, I started from a research finding about a real workflow, and I spent as much effort on the guardrails, tests and honest status reporting as on the features.</p>
+
+  <div class="case" id="deptwin">
+    <aside>
+      <span class="tag t-ai" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">Featured · live demo</span>
+      <dl>
+        <dt>Role</dt><dd>Sole designer and builder (with Claude Code agents)</dd>
+        <dt>Context</dt><dd>Yale SOM MGT 409 (AI), fall 2026</dd>
+        <dt>Demo</dt><dd><a href="https://dep-twin-demo.onrender.com">dep-twin-demo.onrender.com</a></dd>
+        <dt>Stack</dt><dd>Python, BoTorch (Bayesian optimization), FastAPI, SQLite, an MCP toolbox, an LLM planner with capped calls</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>Dep Twin: an AI agent that plans experiments, with a human approving every real run</h3>
+      <h4>The research question</h4>
+      <p>Developing a new recipe on a semiconductor deposition tool means running many expensive test wafers, and each real run costs time and money. At Applied Materials I used algorithmic design of experiments (DOE) to cut that cost. I wanted to know whether an AI agent working on a physics-based digital twin could <b>reach the same answer with far fewer real runs</b>, without losing the rigor and traceability that engineers need.</p>
+      <h4>What I built</h4>
+      <ul>
+        <li>A <b>digital twin</b> of an atomic layer deposition (ALD) tool. Every physical parameter cites a public source (DOI and table or page), and any parameter without one is marked "to verify" for review. No employer data was used.</li>
+        <li>A <b>Bayesian-optimization agent</b> that proposes the next recipe. A validator checks each proposal for units, safety interlocks, duplicates and confidential text. Every prediction comes with a mean, a standard deviation and a 95% interval.</li>
+        <li><b>Agents propose and humans approve.</b> Only a human with an approval token can run a proposal on the "real" tool, which is a hidden model the agent never sees. There is deliberately no approve tool in the MCP toolbox.</li>
+        <li>An <b>MCP toolbox</b> so other AI agents can simulate, propose and explain, plus a web page with run history, a best-so-far plot, wafer maps and a what-if panel.</li>
+        <li><b>Evaluation infrastructure:</b> a red-team suite, sanity checks before every deploy, an append-only record of every run (inputs, model version, seed, who approved it), and a lessons log.</li>
+      </ul>
+      <h4>Results, tested on 20 hidden "real" tools</h4>
+      <div class="stat-row">
+        <div class="stat"><b>18 runs</b><span>median for the agent to reach the best result of an 81-run full-factorial DOE (success threshold: ≤ 27)</span></div>
+        <div class="stat"><b>4 runs</b><span>median for the twin-warm-started agent to match the best result of a 27-run central composite design</span></div>
+        <div class="stat"><b>93%</b><span>share of real outcomes that fell inside the agent's own 95% prediction interval, after calibration</span></div>
+      </div>
+      <p>I set the success criterion and the evaluation protocol <b>before looking at results</b>, and nothing was tuned afterwards. The report also says where it failed: on 6 of 20 tools the plain agent never reached the DOE's best result. The phase-2 goal of predicting how a hardware part swap changes the process missed its 0.3-point accuracy target, and the report says so.</p>
+      <div class="insight"><b>Why it matters for AIRS:</b> the questions are the same as for AI research tools. When should the AI act, and when should a person approve? How do you show uncertainty and sources so people can trust an output? And how do you evaluate the system honestly before anyone relies on it?</div>
+    </div>
+  </div>
+
+  <div class="case" id="compass">
+    <aside>
+      <span class="tag t-ai" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">AI tool · live</span>
+      <dl>
+        <dt>Role</dt><dd>Founder and sole developer</dd>
+        <dt>When</dt><dd>Fall 2026</dd>
+        <dt>Live</dt><dd><a href="https://yale-career-compass.lovable.app/">yale-career-compass.lovable.app</a></dd>
+        <dt>Stack</dt><dd>FastAPI, daily crawler, Postgres, OpenRouter (free chat model), Lovable front end</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>Yale Career Compass: entry-level jobs from employers' own career pages</h3>
+      <h4>The user need</h4>
+      <p>Students, especially international students, waste hours on job boards full of reposted, stale and duplicate listings, and they still can't tell which employers have sponsored visas before. I wanted every listing to be <b>real, current and traceable to its source</b>.</p>
+      <h4>What I built</h4>
+      <ul>
+        <li>A <b>daily pipeline</b> that reads <b>2,700+ internships, co-ops and new-grad roles</b> straight from employers' own hiring systems (Greenhouse, Lever, Ashby, Workday). It uses no job boards or aggregators, and every card links to the original posting.</li>
+        <li><b>Public data joined in:</b> each employer is tagged with its H-1B filing history from U.S. Department of Labor records. The page labels this as a history, not a promise of sponsorship, and treats "no record" as unknown.</li>
+        <li>An <b>"Ask Mika" chat that can't invent results.</b> Code answers most questions from the site's own data, and the model only interprets the question. The server drops any role the model mentions that the code didn't find, and a newly discovered role joins the shared pool only after code re-reads it on the company's page.</li>
+        <li><b>Privacy and cost limits by design:</b> no accounts, saved roles and applications stay in the browser, statistics are aggregate counts only, and paid model steps stop at a small daily dollar cap.</li>
+        <li>A <b>40-attack red team</b> (hostile postings, prompt injection, privacy checks) runs offline on every push.</li>
+      </ul>
+      <div class="insight guard"><b>What this shows for AIRS:</b> an insight tool is only as good as the provenance of its data. Each answer here can be traced to a source, and the AI is kept to interpreting questions so it can't make results up.</div>
+    </div>
+  </div>
+
+  <div class="case" id="salesdesk">
+    <aside>
+      <span class="tag t-ai" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">AI tool · in use</span>
+      <dl>
+        <dt>Role</dt><dd>Product owner and builder</dd>
+        <dt>Where</dt><dd>Conssin (industrial lighting and batteries), 2025–26</dd>
+        <dt>Users</dt><dd>The company's sales team</dd>
+        <dt>Stack</dt><dd>FastAPI, SQLite, pydantic-ai agent, Claude Code</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>Sales Desk: an AI desk for prospect research and quoting</h3>
+      <h4>The problem</h4>
+      <p>Salespeople spent hours researching each prospect company, rebuilding quotes from inquiry emails and drafting follow-ups. I started by mapping that workflow, then automated the steps that took the most time.</p>
+      <h4>What I built</h4>
+      <ul>
+        <li>A <b>research agent</b> that profiles a company with a fixed budget of 4 searches and 6 page reads, stays on that company's domain, cites every source, caches results for 60 days, and treats web pages as data, never as instructions.</li>
+        <li>A <b>"Today" page built from data:</b> each card is one piece of pending work (an unanswered inquiry, a quote that's due) with exactly one main action, and the card disappears once the work is done. A new user gets from the first card to a finished quote in 5 clicks.</li>
+        <li>Plain language throughout. An automated test checks every page for developer jargon.</li>
+      </ul>
+      <div class="insight guard"><b>Guardrails:</b> the AI chooses among options but never invents a number. Every price and amount comes from code and the price book, and a checker flags any amount in a draft email that doesn't match the quote. Nothing is sent automatically. Build reports separate what passed with real data from what passed only in a mock environment.</div>
+    </div>
+  </div>
+  <div class="also" id="also-built">
+    <h4>Also built</h4>
+    <ul>
+      <li id="mika"><b>Mika</b>: a recruiting and campus agent for Yale SOM students. It merges 700+ roles and 100+ weekly events from 15+ public sources into personalized dashboards for 100+ students, and every change the agent suggests needs the student's click, with Undo.</li>
+      <li id="fab"><b>Mika Fab Academy</b> (<a href="https://mika-fab-academy.onrender.com/?world=fab">live</a>): a 3D digital twin of a chip fab for training new engineers. I designed it after interviewing working-level engineers, and its AI quiz writer may only use audited facts.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="research"><div class="wrap">
+  <h2>Research case studies</h2>
+  <p class="sub">Customer and market research from my work in industrial hardware and a Yale climate venture project. Client names are removed.</p>
+
+  <div class="case" id="voltcart">
+    <aside>
+      <span class="tag t-qual" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">Qualitative</span>
+      <dl>
+        <dt>Context</dt><dd>Yale Climate Intensive venture project, Nov–Dec 2026</dd>
+        <dt>Method</dt><dd>Semi-structured interviews, about 20 minutes each, plus a one-week power logger</dd>
+        <dt>Sample</dt><dd>27 participants across 5 stakeholder groups</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>VoltCart: would food trucks rent swappable batteries?</h3>
+      <h4>Plan</h4>
+      <p>The hypothesis came from an earlier <a href="#market">market assessment</a>: food-truck generators are noisy, smell of fuel and cost $300+ a month. A battery would fix that, but the upfront cost is a barrier. We wrote down hypotheses <b>and pass/fail thresholds before the first interview</b>, for example "most trucks need 1 module a day; pass if ≥ 70% log ≤ 6 kWh per service day."</p>
+      <h4>Recruit</h4>
+      <table>
+        <tr><th>Group</th><th>n</th><th>Why they're in the sample</th></tr>
+        <tr><td>Food-truck owners who run gas generators</td><td>15</td><td>Core user; screened out anyone without a generator</td></tr>
+        <tr><td>Landscaping companies</td><td>5</td><td>Adjacent use case; towns are banning gas leaf blowers</td></tr>
+        <tr><td>Commissary operators</td><td>3</td><td>Would host the charging cabinet</td></tr>
+        <tr><td>Event organizers</td><td>3</td><td>Decide which vendors are allowed</td></tr>
+        <tr><td>Fire marshal</td><td>1</td><td>Approves (or blocks) the charging site</td></tr>
+      </table>
+      <h4>Collect: interview rules I wrote for the team</h4>
+      <ul>
+        <li>Ask what they <em>did</em>, not what they <em>would</em> do: "What did you spend on gas last month?", not "Would a battery save you money?"</li>
+        <li>Don't pitch until the offer section. Ask for proof (receipts, generator model, photos). Write down exact quotes, and record only with permission.</li>
+        <li>Pricing uses the four Van Westendorp questions before revealing the real price, then compares it with what they said they spend on gas.</li>
+        <li>End every interview with "Who else should we talk to?"</li>
+      </ul>
+      <div class="insight">The protocol is built to avoid the biggest risk in discovery interviews, which is hearing "sounds great" from people who will never pay. Each hypothesis is tied to a behavior or artifact we can check.</div>
+      <p><b>Status:</b> interviews are running through December 2026. Findings and the pass/fail result for each hypothesis will be added once they are synthesized.</p>
+    </div>
+  </div>
+
+  <div class="case" id="painpoints">
+    <aside>
+      <span class="tag t-qual" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">Qualitative synthesis</span>
+      <dl>
+        <dt>Context</dt><dd>North American energy-storage industry forum, 2026</dd>
+        <dt>Method</dt><dd>On-site conversations, then affinity mapping into a segment matrix</dd>
+        <dt>Output</dt><dd>2 × 2 segment matrix with a "minimum bar" for each segment</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>What actually breaks for energy-storage users</h3>
+      <p>I organized the field feedback by <b>use case</b> (home vs. commercial and industrial) and <b>size</b> (2–10 kWh vs. over 10 kWh). For each of the four segments I recorded concrete failure stories, then turned them into the minimum a product must meet.</p>
+      <table>
+        <tr><th>Segment</th><th>Most-cited pain</th><th>Minimum bar</th></tr>
+        <tr><td>Home, small</td><td>Apps that require the cloud stop working during an outage, which is exactly when the battery is needed</td><td>Full control without a network; high surge power for fridges and pumps</td></tr>
+        <tr><td>Home, large</td><td>Battery can't talk to third-party inverters; won't charge below 0 °C</td><td>Open protocols; built-in self-heating</td></tr>
+        <tr><td>Commercial, small</td><td>After a deep discharge, the battery locks up and a technician has to drive out to restart it</td><td>Wakes up by itself on solar or grid power; zero site visits</td></tr>
+        <tr><td>Commercial, large</td><td>Missing UL 9540A certification keeps systems off sites; cooling fails more often than the batteries</td><td>Complete safety certifications; reliable cooling; local spare parts</td></tr>
+      </table>
+      <div class="insight"><b>Key finding:</b> in every segment, people care less about features than about the product working <em>when no one is around</em>, during an outage, in the cold or at a remote site.</div>
+    </div>
+  </div>
+
+  <div class="case" id="market">
+    <aside>
+      <span class="tag t-mixed" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">Mixed methods</span>
+      <dl>
+        <dt>Context</dt><dd>Go-to-market decision for a battery-pack line, early 2026</dd>
+        <dt>Methods</dt><dd>Retail audits (REI, Lowe's, Best Buy, Home Depot, Harbor Freight), site visits to rental companies, trade-show conversations, price benchmarking</dd>
+        <dt>Decision</dt><dd>Don't enter consumer; go after industrial use cases and Latin America; investigate food trucks</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>Battery packs: where not to compete</h3>
+      <h4>Quantitative: list vs. street price, $/kWh</h4>
+      <table id="pricechart">
+        <tr><th style="width:28%">Consumer brand</th><th>List → typical discounted price</th></tr>
+      </table>
+      <h4>Qualitative: what the shelves and the job sites showed</h4>
+      <ul>
+        <li>Packs made in 2024 were still sitting unopened at camping and hardware stores, and one big-box store kept the category <b>more than 50% off</b>. The consumer market is saturated, and its software ecosystems are a strength we couldn't match.</li>
+        <li>Small contractors in Seattle didn't ask for battery packs at all, and that held up at a Texas trade show. <b>The real competitor is the gas generator</b>, not another battery brand.</li>
+        <li>An unexpected signal: small construction crews from Mexico, Honduras and Colombia were the most interested, and they were also the most price-sensitive.</li>
+      </ul>
+      <div class="insight"><b>Recommendation:</b> don't enter the consumer market; focus on industrial uses and Latin America. The food-truck finding (a market still wide open, where generator noise and fuel smell are the pain) carried into the <a href="#voltcart">VoltCart study</a>.</div>
+    </div>
+  </div>
+
+  <div class="case" id="instrument">
+    <aside>
+      <span class="tag t-qual" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">Instrument design</span>
+      <dl>
+        <dt>Context</dt><dd>Requirements for an airport ground-equipment startup's battery modules, Nov 2026</dd>
+        <dt>Format</dt><dd>Spreadsheet survey in two tiers: 20 core items and 36 optional technical items</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>A questionnaire people actually finish</h3>
+      <ul>
+        <li><b>Respect the respondent's time.</b> The core tab takes 10–15 minutes and the technical tab is optional. Every item has an example answer.</li>
+        <li><b>"Not sure" is a perfectly good answer.</b> Respondents don't make up specs just to fill a cell.</li>
+        <li><b>Make them rank trade-offs.</b> "If targets conflict, rank weight, energy, cost, cycle life, size" shows real priorities that separate questions would hide.</li>
+        <li><b>Ask about context, not just specs.</b> Swap frequency, shift patterns and climate at the actual airports let us work out requirements the customer didn't know to state.</li>
+        <li>Each question says why it's being asked (for example, "helps us size connector and latch life"), and the survey asks for supporting files such as photos and existing datasheets.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="also" id="events">
+    <h4>Also</h4>
+    <ul><li><b>Field-research planning:</b> I screened 30+ industry events by research question and audience (end users, dealers, decision-makers) and ranked a top five, to decide where to observe buyers and recruit interviewees.</li></ul>
+  </div>
+</div></section>
+
+<section id="science"><div class="wrap">
+  <h2>Scientific research</h2>
+  <p class="sub">Before business school I did experimental research and manufacturing analytics. That's where I learned to design studies carefully, control for confounds and report exactly what the data supports.</p>
+  <h4 style="font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:0 0 6px">Publications</h4>
+  <ul class="pubs">
+    <li>"Combinatorial Studies of Palladium-Based Oxygen Reduction Electrocatalysts for Alkaline Fuel Cells." <em>Journal of the American Chemical Society</em>, 2020.<br><span style="color:var(--ink-3);font-size:14px">A combinatorial study: many catalyst compositions were screened systematically to find the best ones, rather than tested one at a time.</span></li>
+    <li>"Octahedral Spinel Electrocatalysts for Alkaline Fuel Cells." <em>Proceedings of the National Academy of Sciences</em>, 2019.</li>
+  </ul>
+  <h4 style="font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:26px 0 6px">Patents &amp; certificates</h4>
+  <ul class="pubs">
+    <li><b>5 patent applications</b> (2023–2025) from process development at Applied Materials, including:
+      <ul>
+        <li>"Gas flow for stress reduction in Carbon HM" (submitted 2023)</li>
+        <li>"Non-Peeling a-Si+C film stack" (submitted 2023)</li>
+      </ul>
+    </li>
+    <li><b>Program Management Certificate</b>, Applied Materials – Berkeley program (2024)</li>
+  </ul>
+  <h4 style="font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:26px 0 6px">Quantitative methods in practice</h4>
+  <ul>
+    <li><b>Algorithmic design of experiments:</b> sped up development of a 2 nm deposition platform, which two lead customers adopted.</li>
+    <li><b>Turning daily data into decisions:</b> converted daily test data into customer reviews, and built an automated control system that cut estimated yield loss by 50%, adopted across the fleet.</li>
+    <li><b>Statistical process control:</b> caught drifting trends early at Micron and wrote the standard operating documents for it.</li>
+  </ul>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <h2 style="color:var(--ink)">Let's talk</h2>
+  <p><a href="mailto:gary.chen@yale.edu">gary.chen@yale.edu</a> · <a href="https://linkedin.com/in/GuanyuGC">linkedin.com/in/GuanyuGC</a></p>
+  <p>Built with Claude Code. Company and client names in these case studies are removed or generalized.</p>
+</div></footer>
+
+<script>
+  // Price benchmark (consumer portable storage, $/kWh): list vs typical discounted
+  const prices=[["Brand A",700,500],["Brand B",800,400],["Brand C",800,429],["Brand D",1000,750]];
+  const t=document.getElementById('pricechart');
+  prices.forEach(([b,list,disc])=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${b}</td><td>
+      <div style="display:flex;align-items:center;gap:8px;margin:2px 0"><div class="bar alt" style="width:${list/10*0.8}%"></div><span>$${list} list</span></div>
+      <div style="display:flex;align-items:center;gap:8px;margin:2px 0"><div class="bar" style="width:${disc/10*0.8}%"></div><span>$${disc} (−${Math.round((1-disc/list)*100)}%)</span></div></td>`;
+    t.appendChild(tr);
+  });
+
+  // Research-stage filter
+  const notes={
+    all:"",
+    plan:"Plan: research questions, hypotheses, thresholds, choosing the instrument.",
+    recruit:"Recruit: screeners, sampling across stakeholder groups, finding participants.",
+    collect:"Collect: interviews, field observation, surveys, data pipelines.",
+    analyze:"Analyze: affinity mapping, segment matrices, benchmarks, classification.",
+    report:"Report & share: dashboards, decision memos, plain-language insights.",
+    archive:"Archive & reuse: caches, logs and repositories that make insights reusable."
+  };
+  document.querySelectorAll('.process button').forEach(btn=>btn.addEventListener('click',()=>{
+    const s=btn.dataset.stage;
+    document.querySelectorAll('.process button').forEach(b=>b.setAttribute('aria-pressed',b===btn));
+    document.getElementById('stage-note').textContent=notes[s];
+    document.querySelectorAll('.card').forEach(c=>c.classList.toggle('dim',s!=='all'&&!c.dataset.stages.split(' ').includes(s)));
+  }));
+</script>
+</body>
+</html>
