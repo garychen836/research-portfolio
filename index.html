@@ -117,7 +117,7 @@
   <p class="sub">The four preferred qualifications in the posting, and where to find the evidence for each below.</p>
   <div class="fit">
     <div><span class="q">Building tools with AI (Claude Code)</span>
-      <p>Five AI products built with Claude Code, four of them live. Three are featured: <a href="#deptwin">Dep Twin</a>, an experiment-planning agent with a public demo; <a href="#compass">Yale Career Compass</a>, which lists 2,700+ jobs; and <a href="#salesdesk">Sales Desk</a>, which my company's sales team uses. Two more are <a href="#also-built">summarized below them</a>.</p></div>
+      <p>Five AI products built with Claude Code, four of them live. Four have full case studies: <a href="#deptwin">Dep Twin</a>, an experiment-planning agent with a public demo; <a href="#mika">Mika MBA Companion</a>, a personal agent used by 100+ students; <a href="#compass">Yale Career Compass</a>, an open feed of 2,700+ jobs; and <a href="#salesdesk">Sales Desk</a>, which my company's sales team uses. <a href="#also-built">Mika Fab Academy</a> is summarized after them.</p></div>
     <div><span class="q">The end-to-end research process</span>
       <p>Click the stages in <a href="#work">All work</a> to see which project covers each one. <a href="#voltcart">VoltCart</a> walks through every stage: hypotheses, recruiting screener, guide, pass/fail thresholds, synthesis.</p></div>
     <div><span class="q">Qualitative (and some quantitative) methods</span>
@@ -147,6 +147,13 @@
       <p>A digital twin of an ALD deposition tool. A Bayesian-optimization agent proposes recipes and a human approves every real run. It matched the best result of an 81-run standard experiment design in a median of 18 runs.</p>
       <a class="more" href="#deptwin">Read the case →</a>
       <div class="stages">Plan · Collect · Analyze · Report · Archive</div>
+    </article>
+    <article class="card" data-stages="collect analyze report archive">
+      <span class="tag t-ai">AI tool · live</span>
+      <h3>Mika MBA Companion</h3>
+      <p>A personal agent for Yale SOM students: 700+ roles and 100+ weekly events from 15+ sources, plus coursework, case practice and networking, with a demand view for the Career Development Office.</p>
+      <a class="more" href="#mika">Read the case →</a>
+      <div class="stages">Collect · Analyze · Report · Archive</div>
     </article>
     <article class="card" data-stages="collect analyze report archive">
       <span class="tag t-ai">AI tool · live</span>
@@ -237,6 +244,33 @@
     </div>
   </div>
 
+  <div class="case" id="mika">
+    <aside>
+      <span class="tag t-ai" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">AI tool · live</span>
+      <dl>
+        <dt>Role</dt><dd>Founder and sole developer</dd>
+        <dt>When</dt><dd>Sept 2026 to present</dd>
+        <dt>Users</dt><dd>100+ Yale SOM students; the Career Development Office</dd>
+        <dt>Scope</dt><dd>Yale SOM MBA students: recruiting, events, coursework, case practice and networking in one place</dd>
+        <dt>Stack</dt><dd>Python/FastAPI, Postgres, LLM via OpenRouter, Claude Code</dd>
+      </dl>
+    </aside>
+    <div>
+      <h3>Mika MBA Companion: one agent for every recruiting path</h3>
+      <h4>The research question</h4>
+      <p>MBA students on paths with no formal recruiting (venture, startups, climate, niche industries) piece together roles, events and deadlines from more than 15 separate pages. Where does that time go, and which information do they actually act on?</p>
+      <h4>What I built</h4>
+      <ul>
+        <li>A <b>data pipeline</b> that pulls public listings from 15+ sources into one schema: 700+ roles and 100+ events a week. It works offline from a snapshot, so anyone can rebuild it.</li>
+        <li><b>Classification with code first and AI second.</b> Rules assign each role a job family. The few roles the rules can't place go to the model in a single batch, and the result is cached for everyone, so cost doesn't grow with the number of users.</li>
+        <li><b>An assistant that proposes and lets the user decide.</b> Every change the agent suggests appears as a button with Undo. The agent never edits a student's data on its own.</li>
+        <li><b>Instrumentation:</b> token use by purpose, a service log, and a plain-text morning report (visitors, what they did, tokens and dollars). It's my own research archive of how the tool is used.</li>
+      </ul>
+      <p><b>How it differs from Career Compass:</b> Mika is a personal agent for one cohort's whole MBA life. It knows each student's paths, courses and contacts, and it acts on their behalf (with their OK). Career Compass, below, is an open job feed for any student, built around where each listing comes from.</p>
+      <div class="insight"><b>What this shows for AIRS:</b> combining many messy sources into one view, keeping the person in control, and measuring use from day one. Research repositories need the same three things.</div>
+    </div>
+  </div>
+
   <div class="case" id="compass">
     <aside>
       <span class="tag t-ai" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">AI tool · live</span>
@@ -259,6 +293,7 @@
         <li><b>Privacy and cost limits by design:</b> no accounts, saved roles and applications stay in the browser, statistics are aggregate counts only, and paid model steps stop at a small daily dollar cap.</li>
         <li>A <b>40-attack red team</b> (hostile postings, prompt injection, privacy checks) runs offline on every push.</li>
       </ul>
+      <p><b>How it differs from Mika:</b> Compass is open to any student, not just one MBA program, and it covers internships, co-ops and new-grad jobs only. It needs no account or profile. Its focus is trust: original postings, visa history and nothing invented.</p>
       <div class="insight guard"><b>What this shows for AIRS:</b> an insight tool is only as good as the provenance of its data. Each answer here can be traced to a source, and the AI is kept to interpreting questions so it can't make results up.</div>
     </div>
   </div>
@@ -289,7 +324,6 @@
   <div class="also" id="also-built">
     <h4>Also built</h4>
     <ul>
-      <li id="mika"><b>Mika</b>: a recruiting and campus agent for Yale SOM students. It merges 700+ roles and 100+ weekly events from 15+ public sources into personalized dashboards for 100+ students, and every change the agent suggests needs the student's click, with Undo.</li>
       <li id="fab"><b>Mika Fab Academy</b> (<a href="https://mika-fab-academy.onrender.com/?world=fab">live</a>): a 3D digital twin of a chip fab for training new engineers. I designed it after interviewing working-level engineers, and its AI quiz writer may only use audited facts.</li>
     </ul>
   </div>
