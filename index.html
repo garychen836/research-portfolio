@@ -40,15 +40,17 @@
   .fit .q{font-size:13px;color:var(--ink-3);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
   .fit p{margin:6px 0 0}
   /* process map */
-  .process{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-  .process button{font:inherit;font-size:14px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;cursor:pointer;color:var(--ink-2)}
-  .process button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .process-note{font-size:14px;color:var(--ink-3);margin:-6px 0 22px;min-height:22px}
   /* cards */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
   .card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;display:flex;flex-direction:column;transition:opacity .2s, box-shadow .2s}
   .card:hover{box-shadow:0 4px 18px rgba(9,30,66,.08)}
-  .card.dim{opacity:.28}
+  .coverage-wrap{overflow-x:auto;margin-bottom:28px}
+  .coverage{min-width:620px;font-size:14px}
+  .coverage th,.coverage td{text-align:center;padding:9px 8px}
+  .coverage thead th{font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .coverage th[scope=row],.coverage thead th:first-child{text-align:left;font-weight:600;background:none}
+  .coverage th[scope=row] a{text-decoration:none}
+  .coverage .dot{color:var(--accent);font-size:15px}
   .also{border-top:1px dashed var(--line);padding-top:24px}
   .also h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:0 0 6px}
   .also li{margin:8px 0;color:var(--ink-2)}
@@ -119,7 +121,7 @@
     <div><span class="q">Building tools with AI (Claude Code)</span>
       <p>Five AI products built with Claude Code, four of them live. Four have full case studies: <a href="#deptwin">Dep Twin</a>, an experiment-planning agent with a public demo; <a href="#mika">Mika MBA Companion</a>, a personal agent used by 100+ students; <a href="#compass">Yale Career Compass</a>, an open feed of 2,700+ jobs; and <a href="#salesdesk">Sales Desk</a>, which my company's sales team uses. <a href="#also-built">Mika Fab Academy</a> is summarized after them.</p></div>
     <div><span class="q">The end-to-end research process</span>
-      <p>Click the stages in <a href="#work">All work</a> to see which project covers each one. <a href="#voltcart">VoltCart</a> walks through every stage: hypotheses, recruiting screener, guide, pass/fail thresholds, synthesis.</p></div>
+      <p>The table in <a href="#work">All work</a> shows which projects cover each stage. <a href="#voltcart">VoltCart</a> shows planning through data collection in detail: hypotheses, a recruiting screener, the interview guide and pass/fail thresholds.</p></div>
     <div><span class="q">Qualitative (and some quantitative) methods</span>
       <p>Interviews, field observation, retail audits and survey design (<a href="#painpoints">pain-point synthesis</a>, <a href="#market">market assessment</a>, <a href="#instrument">questionnaire</a>), plus DOE, SPC and price benchmarking from engineering.</p></div>
     <div><span class="q">Data management, analysis &amp; sharing insights</span>
@@ -128,81 +130,78 @@
 </div></section>
 
 <section id="work"><div class="wrap">
-  <h2>All work, by research stage</h2>
-  <p class="sub">Choose a stage of the research process to highlight the projects that cover it.</p>
-  <div class="process" role="group" aria-label="Filter by research stage">
-    <button data-stage="all" aria-pressed="true">All</button>
-    <button data-stage="plan">Plan</button>
-    <button data-stage="recruit">Recruit</button>
-    <button data-stage="collect">Collect</button>
-    <button data-stage="analyze">Analyze</button>
-    <button data-stage="report">Report &amp; share</button>
-    <button data-stage="archive">Archive &amp; reuse</button>
+  <h2>All work</h2>
+  <p class="sub">Which stages of the research process each project covers, followed by a short summary of each.</p>
+  <div class="coverage-wrap">
+  <table class="coverage">
+    <thead><tr><th scope="col">Project</th><th scope="col">Plan</th><th scope="col">Recruit</th><th scope="col">Collect</th><th scope="col">Analyze</th><th scope="col">Report &amp; share</th><th scope="col">Archive &amp; reuse</th></tr></thead>
+    <tbody>
+      <tr><th scope="row"><a href="#deptwin">Dep Twin</a></th><td><span class=dot aria-label=yes>●</span></td><td></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td></tr>
+      <tr><th scope="row"><a href="#mika">Mika MBA Companion</a></th><td></td><td></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td></tr>
+      <tr><th scope="row"><a href="#compass">Yale Career Compass</a></th><td></td><td></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td></tr>
+      <tr><th scope="row"><a href="#salesdesk">Sales Desk</a></th><td></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td></tr>
+      <tr><th scope="row"><a href="#voltcart">VoltCart customer discovery</a></th><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td></td><td></td></tr>
+      <tr><th scope="row"><a href="#painpoints">Energy-storage pain points</a></th><td></td><td></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td></td></tr>
+      <tr><th scope="row"><a href="#market">Battery-pack market assessment</a></th><td><span class=dot aria-label=yes>●</span></td><td></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td></td></tr>
+      <tr><th scope="row"><a href="#instrument">Requirements questionnaire</a></th><td><span class=dot aria-label=yes>●</span></td><td></td><td><span class=dot aria-label=yes>●</span></td><td></td><td></td><td></td></tr>
+      <tr><th scope="row"><a href="#science">PNAS &amp; JACS papers</a></th><td><span class=dot aria-label=yes>●</span></td><td></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td><span class=dot aria-label=yes>●</span></td><td></td></tr>
+    </tbody>
+  </table>
   </div>
-  <p class="process-note" id="stage-note"></p>
   <div class="grid">
     <article class="card featured" data-stages="plan collect analyze report archive">
       <span class="tag t-ai">Featured · AI tool · live demo</span>
       <h3>Dep Twin: an AI agent that plans experiments</h3>
       <p>A digital twin of an ALD deposition tool. A Bayesian-optimization agent proposes recipes and a human approves every real run. It matched the best result of an 81-run standard experiment design in a median of 18 runs.</p>
       <a class="more" href="#deptwin">Read the case →</a>
-      <div class="stages">Plan · Collect · Analyze · Report · Archive</div>
     </article>
     <article class="card" data-stages="collect analyze report archive">
       <span class="tag t-ai">AI tool · live</span>
       <h3>Mika MBA Companion</h3>
       <p>A personal agent for Yale SOM students: 700+ roles and 100+ weekly events from 15+ sources, plus coursework, case practice and networking, with a demand view for the Career Development Office.</p>
       <a class="more" href="#mika">Read the case →</a>
-      <div class="stages">Collect · Analyze · Report · Archive</div>
     </article>
     <article class="card" data-stages="collect analyze report archive">
       <span class="tag t-ai">AI tool · live</span>
       <h3>Yale Career Compass</h3>
       <p>2,700+ entry-level roles read daily from employers' own career pages, joined with public H-1B filing data, with a chat that can only answer from data the site has verified.</p>
       <a class="more" href="#compass">Read the case →</a>
-      <div class="stages">Collect · Analyze · Report · Archive</div>
     </article>
     <article class="card" data-stages="recruit collect analyze report archive">
       <span class="tag t-ai">AI tool · in use</span>
       <h3>Sales Desk: AI prospect research and quoting</h3>
       <p>A research agent that profiles companies with cited sources, drafts outreach and turns inquiries into quotes. Any number comes from code, never from the model.</p>
       <a class="more" href="#salesdesk">Read the case →</a>
-      <div class="stages">Recruit · Collect · Analyze · Report · Archive</div>
     </article>
     <article class="card" data-stages="plan recruit collect analyze">
       <span class="tag t-qual">Qualitative</span>
       <h3>VoltCart customer discovery</h3>
       <p>An interview study of 27 people across five stakeholder groups, with hypotheses and pass/fail thresholds set before any interviews.</p>
       <a class="more" href="#voltcart">Read the case →</a>
-      <div class="stages">Plan · Recruit · Collect · Analyze</div>
     </article>
     <article class="card" data-stages="collect analyze report">
       <span class="tag t-qual">Qualitative synthesis</span>
       <h3>Energy-storage pain points</h3>
       <p>Field feedback from a North American industry forum, synthesized into a segment × pain-point matrix with a "minimum bar" for each segment.</p>
       <a class="more" href="#painpoints">Read the case →</a>
-      <div class="stages">Collect · Analyze · Report</div>
     </article>
     <article class="card" data-stages="plan collect analyze report">
       <span class="tag t-mixed">Mixed methods</span>
       <h3>Battery-pack market assessment</h3>
       <p>Retail audits, site visits, trade-show conversations and $/kWh benchmarking. The result was a recommendation not to enter one market, and a new direction.</p>
       <a class="more" href="#market">Read the case →</a>
-      <div class="stages">Plan · Collect · Analyze · Report</div>
     </article>
     <article class="card" data-stages="plan collect">
       <span class="tag t-qual">Instrument design</span>
       <h3>Requirements questionnaire</h3>
       <p>A two-tier survey (20 core items, 36 optional technical items) that takes a customer 10–15 minutes and makes them rank conflicting targets.</p>
       <a class="more" href="#instrument">Read the case →</a>
-      <div class="stages">Plan · Collect</div>
     </article>
     <article class="card" data-stages="plan collect analyze report">
       <span class="tag t-sci">Peer-reviewed</span>
       <h3>PNAS (2019) · JACS (2020)</h3>
       <p>Fuel-cell catalyst research, including a combinatorial screening study, plus five patent applications and DOE/SPC work in semiconductor manufacturing.</p>
       <a class="more" href="#science">See publications →</a>
-      <div class="stages">Plan · Collect · Analyze · Report</div>
     </article>
   </div>
 </div></section>
@@ -331,13 +330,13 @@
 
 <section id="research"><div class="wrap">
   <h2>Research case studies</h2>
-  <p class="sub">Customer and market research from my work in industrial hardware and a Yale climate venture project. Client names are removed.</p>
+  <p class="sub">Customer and market research from my work in industrial hardware and a climate startup I'm building through Yale's Tsai CITY. Client names are removed.</p>
 
   <div class="case" id="voltcart">
     <aside>
       <span class="tag t-qual" style="font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px">Qualitative</span>
       <dl>
-        <dt>Context</dt><dd>Yale Climate Intensive venture project, Nov–Dec 2026</dd>
+        <dt>Context</dt><dd>Climate Intensive, a Tsai CITY venture program at Yale, Nov–Dec 2026. It is the customer discovery for a startup I'm building.</dd>
         <dt>Method</dt><dd>Semi-structured interviews, about 20 minutes each, plus a one-week power logger</dd>
         <dt>Sample</dt><dd>27 participants across 5 stakeholder groups</dd>
       </dl>
@@ -487,22 +486,6 @@
     t.appendChild(tr);
   });
 
-  // Research-stage filter
-  const notes={
-    all:"",
-    plan:"Plan: research questions, hypotheses, thresholds, choosing the instrument.",
-    recruit:"Recruit: screeners, sampling across stakeholder groups, finding participants.",
-    collect:"Collect: interviews, field observation, surveys, data pipelines.",
-    analyze:"Analyze: affinity mapping, segment matrices, benchmarks, classification.",
-    report:"Report & share: dashboards, decision memos, plain-language insights.",
-    archive:"Archive & reuse: caches, logs and repositories that make insights reusable."
-  };
-  document.querySelectorAll('.process button').forEach(btn=>btn.addEventListener('click',()=>{
-    const s=btn.dataset.stage;
-    document.querySelectorAll('.process button').forEach(b=>b.setAttribute('aria-pressed',b===btn));
-    document.getElementById('stage-note').textContent=notes[s];
-    document.querySelectorAll('.card').forEach(c=>c.classList.toggle('dim',s!=='all'&&!c.dataset.stages.split(' ').includes(s)));
-  }));
 </script>
 </body>
 </html>
